@@ -30,7 +30,7 @@ int main(int argc, char **argv) {
             {"header", {{"short", "H"}, {"value", "FILE"}, {"help", "HTML above the content of every page"}}},
             {"footer", {{"short", "f"}, {"value", "FILE"}, {"help", "HTML below the content of every page"}}},
             {"css", {{"short", "c"}, {"value", "FILE"}, {"help", "a stylesheet for the content, header and footer"}}},
-            {"size", {{"default", "a4"}, {"choices", {"a3", "a4", "a5", "letter", "legal"}}, {"help", "the paper"}}},
+            {"size", {{"default", "A4"}, {"choices", {"A3", "A4", "A5", "letter", "legal"}}, {"help", "the paper"}}},
             {"landscape", {{"type", "boolean"}, {"help", "turn the pages sideways"}}},
             {"start", {{"short", "s"}, {"type", "number"}, {"default", 60}, {"value", "MM"}, {"help", "the first page's top margin"}}},
             {"top", {{"short", "t"}, {"type", "number"}, {"default", 10}, {"value", "MM"}, {"help", "the top margin"}}},
