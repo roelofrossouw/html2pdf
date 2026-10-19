@@ -20,6 +20,7 @@ sc_program_info(${PROJECT_NAME}) # --license and --license-text
 
 install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
 install(FILES LICENSE DESTINATION ${CMAKE_INSTALL_DATADIR}/doc/${PROJECT_NAME} RENAME copyright)
+install(FILES NOTICE DESTINATION ${CMAKE_INSTALL_DATADIR}/doc/${PROJECT_NAME}) # the Apache License asks that it go along
 
 if (BUILD_TESTING)
     # Converts a page with a header, footer and table of contents, and checks the PDF it writes.
