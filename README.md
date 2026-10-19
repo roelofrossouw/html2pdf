@@ -3,7 +3,7 @@
 HTML files as PDFs, from the command line: pages with a header and footer,
 page numbers, a table of contents, links and bookmarks, through
 [sc-html2pdf](https://github.com/roelofrossouw/simply-cpp-html2pdf) (litehtml
-and PDFHummus).
+and sc-pdflite).
 
 ```bash
 html2pdf invoice.html                                   # writes invoice.pdf next to it

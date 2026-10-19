@@ -1,4 +1,4 @@
-// html2pdf: an HTML file as a PDF, through sc::html2pdf (litehtml and PDFHummus): pages with a
+// html2pdf: an HTML file as a PDF, through sc::html2pdf (litehtml and sc-pdflite): pages with a
 // header and footer, page numbers, a table of contents, links and bookmarks. --help lists the
 // options.
 
