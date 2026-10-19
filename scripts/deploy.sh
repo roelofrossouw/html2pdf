@@ -6,7 +6,7 @@
 #
 # Usage: scripts/deploy.sh [server] [user]
 
-module="sc-html2pdf"
+module="sc-html2pdf-app"
 server="${1:-build}"
 user="${2:-root}"
 scriptfile=$(realpath "$0")
