@@ -23,9 +23,11 @@ int main(int argc, char **argv) {
     const sc::params args{argc, argv, {
         {"name", "html2pdf"},
         {"version", HTML2PDF_VERSION},
-        {"description", "Writes an HTML file as a PDF. Without OUTPUT it's written next to INPUT, as .pdf. In the header and "
-                        "footer, #Page#, #ToPage#, #section#, #subsection# and #subtitle# are filled in per page; <section> in "
-                        "the content starts a page and an entry in the table of contents."},
+        {"description", "Turns an HTML file into a PDF, its pages broken between lines rather than through them. Give it just "
+                        "INPUT and the PDF lands next to it, as a .pdf. Headers and footers can show #Page#, #ToPage#, "
+                        "#section#, #subsection# and #subtitle#, filled in for each page, and every <section> in the content "
+                        "starts a new page and an entry in the table of contents.\nMore on the wiki: "
+                        "https://github.com/roelofrossouw/simply-cpp/wiki/HTML-to-PDF"},
         {"options", {
             {"header", {{"short", "H"}, {"value", "FILE"}, {"help", "HTML above the content of every page"}}},
             {"footer", {{"short", "f"}, {"value", "FILE"}, {"help", "HTML below the content of every page"}}},
