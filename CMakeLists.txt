@@ -1,9 +1,11 @@
 cmake_minimum_required(VERSION 3.22)
-set(SC_MODULE html2pdf)
+# Not "html2pdf": the deploy scripts name their server folder after it, and sc-html2pdf has that one.
+set(SC_MODULE html2pdf-app)
 project(html2pdf HOMEPAGE_URL "https://github.com/roelofrossouw/html2pdf" LANGUAGES CXX)
 include(cmake/sc_bootstrap.cmake)
 include(GNUInstallDirs)
 include(CTest)
+set(CPACK_PACKAGE_NAME html2pdf) # before sc_program_info(): its licence files are under this name
 
 get_sc_version()
 message(STATUS "html2pdf Version: ${SC_VERSION}")
@@ -33,7 +35,6 @@ elseif (UNIX)
     execute_process(COMMAND lsb_release -sc OUTPUT_VARIABLE HTML2PDF_CODENAME OUTPUT_STRIP_TRAILING_WHITESPACE)
     set(CPACK_GENERATOR DEB)
 endif ()
-set(CPACK_PACKAGE_NAME html2pdf)
 set(CPACK_PACKAGE_VERSION "${SC_VERSION}~${HTML2PDF_CODENAME}")
 set(CPACK_PACKAGE_CONTACT "Roelof Rossouw")
 set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "HTML files as PDFs")
