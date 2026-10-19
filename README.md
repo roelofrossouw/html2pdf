@@ -16,7 +16,8 @@ html2pdf statement.html -w open -p owner                # passwords: readers may
 in mm (`--start` for the first page's top, default 60; `--top` 10, `--right`
 10, `--bottom` 10, `--left` 30), `--header`, `--footer` and `--css` files,
 `--toc PAGE`, `--base-url` (default: the input's folder), `--title`,
-`--author`, `--password`, `--user-password` and `--draw-margins`.
+`--author`, `--password`, `--user-password`, `--builtin-fonts` (PDF's built-in Helvetica, Times
+and Courier, nothing embedded: smaller files) and `--draw-margins`.
 
 In the header and footer `#Page#`, `#ToPage#`, `#section#`, `#subsection#`
 and `#subtitle#` are filled in per page; in a header `#P1Head` shows on the

@@ -26,7 +26,8 @@ int main(int argc, char **argv) {
         {"description", "Turns an HTML file into a PDF, its pages broken between lines rather than through them. Give it just "
                         "INPUT and the PDF lands next to it, as a .pdf. Headers and footers can show #Page#, #ToPage#, "
                         "#section#, #subsection# and #subtitle#, filled in for each page, and every <section> in the content "
-                        "starts a new page and an entry in the table of contents.\nMore on the wiki: "
+                        "starts a new page and an entry in the table of contents. Add --builtin-fonts for PDF's own Helvetica, "
+                        "Times and Courier: nothing embedded, smaller files.\nMore on the wiki: "
                         "https://github.com/roelofrossouw/simply-cpp/wiki/HTML-to-PDF"},
         {"options", {
             {"header", {{"short", "H"}, {"value", "FILE"}, {"help", "HTML above the content of every page"}}},
@@ -45,6 +46,7 @@ int main(int argc, char **argv) {
             {"author", {{"value", "TEXT"}, {"help", "the document's author"}}},
             {"password", {{"short", "p"}, {"value", "TEXT"}, {"help", "the owner's password (default: the user password)"}}},
             {"user-password", {{"short", "w"}, {"value", "TEXT"}, {"help", "the password to open it; readers may only print it"}}},
+            {"builtin-fonts", {{"type", "boolean"}, {"help", "use PDF's built-in fonts (Helvetica, Times, Courier) for text, embedding none: smaller files"}}},
             {"draw-margins", {{"type", "boolean"}, {"help", "outline the margins, header and footer, to check a layout"}}}}},
         {"positional", {
             {"input", {{"help", "the HTML file"}}},
@@ -71,6 +73,7 @@ int main(int argc, char **argv) {
         const auto owner = args.as<std::string>("password", ""), user = args.as<std::string>("user-password", "");
         if (!owner.empty() || !user.empty()) settings.protection = sc::pdf::protection{.user_password = user, .owner_password = owner};
         settings.draw_margins = args.as<bool>("draw-margins");
+        settings.builtin_fonts = args.as<bool>("builtin-fonts");
 
         const sc::html2pdf pdf{read(input.string()), settings};
         pdf.save(output);
