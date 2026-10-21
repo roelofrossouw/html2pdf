@@ -11,7 +11,7 @@ get_sc_version()
 message(STATUS "html2pdf Version: ${SC_VERSION}")
 
 find_or_install_package(sc-core simply-cpp-dev simply-cpp 1.20.0)
-find_or_install_package(sc-html2pdf simply-cpp-html2pdf-dev simply-cpp-html2pdf 1.2.0)
+find_or_install_package(sc-html2pdf simply-cpp-html2pdf-dev simply-cpp-html2pdf 1.3.0)
 
 add_executable(${PROJECT_NAME} html2pdf.cpp)
 target_link_libraries(${PROJECT_NAME} PRIVATE sc::sc-core sc::sc-html2pdf-shared)
@@ -44,7 +44,7 @@ set(CPACK_DEBIAN_PACKAGE_DESCRIPTION "HTML files as PDFs, with headers, footers,
 set(CPACK_DEBIAN_PACKAGE_SECTION utils)
 set(CPACK_DEBIAN_PACKAGE_SHLIBDEPS ON)
 # Our versions end in ~<codename>, which sorts below the bare version: a minimum ends in ~.
-set(CPACK_DEBIAN_PACKAGE_DEPENDS "simply-cpp-html2pdf (>= 1.2.0~)")
+set(CPACK_DEBIAN_PACKAGE_DEPENDS "simply-cpp-html2pdf (>= 1.3.0~)")
 set(CPACK_DEBIAN_FILE_NAME DEB-DEFAULT)
 set(CPACK_SET_DESTDIR ON)
 set(CPACK_PACKAGE_DIRECTORY "${CMAKE_BINARY_DIR}")
