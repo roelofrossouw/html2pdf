@@ -5,6 +5,13 @@ PDF next to it, with pages broken between lines of text rather than through
 them. Want more? Add a header and footer with page numbers, a table of
 contents, bookmarks, working links, your own fonts, or a password.
 
+There's no browser behind it. The HTML and CSS are read and laid out by
+[litehtml](https://github.com/litehtml/litehtml), by Yuri Kobets
+([tordex](https://github.com/tordex)), and the PDF is written by
+[simply-cpp](https://github.com/roelofrossouw/simply-cpp)'s own PDF engine,
+written from scratch in C++, as a standards-compliant PDF (ISO 32000-1, PDF
+1.7).
+
 ```bash
 html2pdf invoice.html                     # writes invoice.pdf next to it
 ```
