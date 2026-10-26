@@ -29,6 +29,10 @@ just without the pictures.
 The full guide, with more examples, is on the wiki:
 **[HTML to PDF](https://github.com/roelofrossouw/simply-cpp/wiki/HTML-to-PDF)**.
 
+Working in PHP? **[html2pdf-php](https://github.com/roelofrossouw/html2pdf-php)**
+does the same from your PHP code: `new SC\Html2Pdf($html)`, then save the PDF or
+send it straight to the browser.
+
 ## A few more things it can do
 
 ```bash
