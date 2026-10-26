@@ -75,20 +75,12 @@ sudo apt -y install html2pdf
 
 ### macOS
 
-html2pdf isn't in Homebrew yet, so build it and the libraries it uses from
-source. You need the Xcode command line tools, CMake and git.
+From the simply-cpp Homebrew tap:
 
 ```bash
-curl -fsSL https://apt.roelof.co.za/setup.sh | bash    # adds the simply-cpp Homebrew tap
-brew install simply-cpp simply-cpp-graphics
-for repo in simply-cpp-pdflite simply-cpp-pdf simply-cpp-litehtml simply-cpp-html2pdf html2pdf; do
-    git clone https://github.com/roelofrossouw/$repo && (cd $repo && bash scripts/install.sh)
-done
+curl -fsSL https://apt.roelof.co.za/setup.sh | bash    # adds the tap
+brew install html2pdf
 ```
-
-Each `scripts/install.sh` builds, tests and installs into `/usr/local` (it
-asks for your password for that last step), in that order, since each one
-needs the ones before it.
 
 ### From source
 
