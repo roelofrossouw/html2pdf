@@ -10,7 +10,7 @@ set(CPACK_PACKAGE_NAME html2pdf) # before sc_program_info(): its licence files a
 get_sc_version()
 message(STATUS "html2pdf Version: ${SC_VERSION}")
 
-find_or_install_package(sc-core simply-cpp-dev simply-cpp 1.20.0)
+find_or_install_package(sc-core simply-cpp-dev simply-cpp 1.24.0) # sc_man_page()
 find_or_install_package(sc-html2pdf simply-cpp-html2pdf-dev simply-cpp-html2pdf 1.4.2)
 
 add_executable(${PROJECT_NAME} html2pdf.cpp)
@@ -19,6 +19,7 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE HTML2PDF_VERSION=\"${SC_VERSI
 sc_program_info(${PROJECT_NAME}) # --license and --license-text
 
 install(TARGETS ${PROJECT_NAME} RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+sc_man_page(${PROJECT_NAME}) # html2pdf.1, from --help and man/html2pdf.md
 install(FILES LICENSE DESTINATION ${CMAKE_INSTALL_DATADIR}/doc/${PROJECT_NAME} RENAME copyright)
 install(FILES NOTICE DESTINATION ${CMAKE_INSTALL_DATADIR}/doc/${PROJECT_NAME}) # the Apache License asks that it go along
 

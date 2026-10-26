@@ -58,7 +58,7 @@ header, `#P1Head` shows on the first page only and `#POHead` on all the others.
 In the content, each `<section>` starts a new page and gets a line in the table
 of contents.
 
-`html2pdf --help` lists everything: the paper (`--size`, `--landscape`),
+`html2pdf --help` (or `man html2pdf`, once it's installed) lists everything: the paper (`--size`, `--landscape`),
 margins in millimetres (`--start` for the first page's top, 60 by default;
 `--top` 10, `--right` 10, `--bottom` 10, `--left` 30), `--header`, `--footer`,
 `--css`, `--toc`, `--base-url`, `--title`, `--author`, the passwords,
