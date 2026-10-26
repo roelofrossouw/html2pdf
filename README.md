@@ -29,9 +29,19 @@ just without the pictures.
 The full guide, with more examples, is on the wiki:
 **[HTML to PDF](https://github.com/roelofrossouw/simply-cpp/wiki/HTML-to-PDF)**.
 
-Working in PHP? **[html2pdf-php](https://github.com/roelofrossouw/html2pdf-php)**
-does the same from your PHP code: `new SC\Html2Pdf($html)`, then save the PDF or
-send it straight to the browser.
+
+## From PHP
+
+There's also a PHP library, **[html2pdf-php](https://github.com/roelofrossouw/html2pdf-php)**,
+to make PDFs from inside your PHP code, with the same features:
+
+```php
+$pdf = new SC\Html2Pdf($html, ['header' => '<p>page #Page# of #ToPage#</p>']);
+header('Content-Type: application/pdf');
+echo $pdf->output();                      // or $pdf->save('/tmp/report.pdf')
+```
+
+On Ubuntu it's `sudo apt -y install html2pdf-php`.
 
 ## A few more things it can do
 

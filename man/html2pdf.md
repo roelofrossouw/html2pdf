@@ -47,4 +47,4 @@ PDF engine.
 # SEE ALSO
 The guide, with more examples: https://github.com/roelofrossouw/simply-cpp/wiki/HTML-to-PDF
 
-html2pdf-php, the same from PHP: https://github.com/roelofrossouw/html2pdf-php
+html2pdf-php(7), the same from PHP: https://github.com/roelofrossouw/html2pdf-php
