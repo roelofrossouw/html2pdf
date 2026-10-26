@@ -57,15 +57,36 @@ as the output to write the PDF to stdout.
 
 ## Installing
 
-On Ubuntu (22.04, 24.04 and 26.04), from the simply-cpp apt repository:
+### Ubuntu (22.04, 24.04 and 26.04)
+
+From the simply-cpp apt repository:
 
 ```bash
-sudo curl -fsSL https://apt.roelof.co.za/setup.sh | bash
+curl -fsSL https://apt.roelof.co.za/setup.sh | bash
 sudo apt -y install html2pdf
 ```
 
-Or build it yourself: `bash scripts/install.sh` builds, tests, packages and
-installs it (to `/usr/local/bin`). It needs
+### macOS
+
+html2pdf isn't in Homebrew yet, so build it and the libraries it uses from
+source. You need the Xcode command line tools, CMake and git.
+
+```bash
+curl -fsSL https://apt.roelof.co.za/setup.sh | bash    # adds the simply-cpp Homebrew tap
+brew install simply-cpp simply-cpp-graphics
+for repo in simply-cpp-pdflite simply-cpp-pdf simply-cpp-litehtml simply-cpp-html2pdf html2pdf; do
+    git clone https://github.com/roelofrossouw/$repo && (cd $repo && bash scripts/install.sh)
+done
+```
+
+Each `scripts/install.sh` builds, tests and installs into `/usr/local` (it
+asks for your password for that last step), in that order, since each one
+needs the ones before it.
+
+### From source
+
+`bash scripts/install.sh` builds, tests, packages and installs html2pdf (to
+`/usr/local/bin`). It needs
 [sc-html2pdf](https://github.com/roelofrossouw/simply-cpp-html2pdf).
 
 ## How it works, and thanks
