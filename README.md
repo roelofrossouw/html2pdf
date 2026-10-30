@@ -26,6 +26,12 @@ curl -fsSL https://www.google.com | html2pdf -u https://www.google.com google.pd
 stylesheets can be found. Leave it out and you still get the text and layout,
 just without the pictures.
 
+Need a QR code on an invoice? Write it as an image and html2pdf draws it, sharp at any size:
+
+```html
+<img src="qr:,https://example.com/pay/123" style="width: 30mm">
+```
+
 The full guide, with more examples, is on the wiki:
 **[HTML to PDF](https://github.com/roelofrossouw/simply-cpp/wiki/HTML-to-PDF)**.
 
