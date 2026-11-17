@@ -86,7 +86,7 @@ int main(int argc, char **argv) {
         if (const auto author = args.as<std::string>("author", ""); !author.empty()) settings.metadata["Author"] = author;
         settings.metadata["Creator"] = "html2pdf " HTML2PDF_VERSION;
         const auto owner = args.as<std::string>("password", ""), user = args.as<std::string>("user-password", "");
-        if (!owner.empty() || !user.empty()) settings.protection = sc::pdf::protection{.user_password = user, .owner_password = owner};
+        if (!owner.empty() || !user.empty()) settings.protection = sc::pdflite::protection{.user_password = user, .owner_password = owner};
         settings.draw_margins = args.as<bool>("draw-margins");
         settings.builtin_fonts = args.as<bool>("builtin-fonts");
 
