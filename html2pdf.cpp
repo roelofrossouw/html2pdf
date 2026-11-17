@@ -10,10 +10,10 @@
 
 #include <unistd.h>
 
-#include <core.h>
-#include <params.h>
+#include <sc/core/core.h>
+#include <sc/core/params.h>
 
-#include <html2pdf.h>
+#include <sc/html2pdf/html2pdf.h>
 
 namespace {
     std::string read(const std::string &file) {
