@@ -50,4 +50,6 @@ set(CPACK_DEBIAN_FILE_NAME DEB-DEFAULT)
 set(CPACK_SET_DESTDIR ON)
 set(CPACK_PACKAGE_DIRECTORY "${CMAKE_BINARY_DIR}")
 set(CPACK_DEBIAN_PACKAGE_HOMEPAGE "${PROJECT_HOMEPAGE_URL}")
+# Suite libraries by their versioned runtime packages (simply-cpp3, simply-cpp-http2): helpers 39.
+sc_versioned_depends(CPACK_DEBIAN_PACKAGE_DEPENDS)
 include(CPack)
