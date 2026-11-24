@@ -1,4 +1,4 @@
-// html2pdf: an HTML file as a PDF, through sc::html2pdf (litehtml and sc-pdflite): pages with a
+// html2pdf: an HTML file as a PDF, through sc::html2pdf::converter (litehtml and sc-pdflite): pages with a
 // header and footer, page numbers, a table of contents, links and bookmarks. "-" reads the HTML
 // from stdin or writes the PDF to stdout, so it fits in a pipe. --help lists the options.
 
@@ -73,8 +73,8 @@ int main(int argc, char **argv) {
         const auto base = input == "-" ? std::filesystem::current_path() / "" : std::filesystem::absolute(input);
 
         sc::html2pdf::options settings;
-        settings.size = sc::page_size_from(args.as<std::string>("size"));
-        settings.turned = args.as<bool>("landscape") ? sc::orientation::landscape : sc::orientation::portrait;
+        settings.size = sc::graphics::page_size_from(args.as<std::string>("size"));
+        settings.turned = args.as<bool>("landscape") ? sc::graphics::orientation::landscape : sc::graphics::orientation::portrait;
         settings.margins = {args.as<double>("top"), args.as<double>("right"), args.as<double>("bottom"), args.as<double>("left"),
                             args.as<double>("start")};
         if (const auto header = args.as<std::string>("header", ""); !header.empty()) settings.header = read(header);
@@ -90,7 +90,7 @@ int main(int argc, char **argv) {
         settings.draw_margins = args.as<bool>("draw-margins");
         settings.builtin_fonts = args.as<bool>("builtin-fonts");
 
-        const sc::html2pdf pdf{read(input), settings};
+        const sc::html2pdf::converter pdf{read(input), settings};
         const auto pages = std::to_string(pdf.page_count()) + (pdf.page_count() == 1 ? " page\n" : " pages\n");
         if (output == "-") {
             std::cout << pdf.bytes() << std::flush;
